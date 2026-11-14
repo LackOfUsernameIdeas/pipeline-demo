@@ -18,8 +18,8 @@ describe("Home Page", () => {
     expect(screen.getByText(/Vercel Previews/i)).toBeInTheDocument();
   });
 
-  it("deliberate failure to verify CI gate", () => {
-    // Intentional failure to test branch protection!
-    expect("ready-for-production").toBe("broken-code");
+  it("verifies CI gate passes with valid code", () => {
+    // Fixed: CI gate will now turn GREEN!
+    expect("ready-for-production").toBe("ready-for-production");
   });
 });
