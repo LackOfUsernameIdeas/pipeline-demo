@@ -17,4 +17,9 @@ describe("Home Page", () => {
     expect(screen.getByText(/CI Verification/i)).toBeInTheDocument();
     expect(screen.getByText(/Vercel Previews/i)).toBeInTheDocument();
   });
+
+  it("deliberate failure to verify CI gate", () => {
+    // Intentional failure to test branch protection!
+    expect("ready-for-production").toBe("broken-code");
+  });
 });
